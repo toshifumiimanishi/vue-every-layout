@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { computed, withDefaults } from "vue";
 
-type CenterProps = {
-  max?: string;
+type HCenterProps = {
   andText?: boolean;
   gutters?: string;
   intrinsic?: boolean;
+  maxWidth?: string;
 }
-const props = withDefaults(defineProps<CenterProps>(), {
-  max: 'none',
+const props = withDefaults(defineProps<HCenterProps>(), {
   andText: false,
   gutters: '0',
   intrinsic: false,
+  maxWidth: 'none',
 })
 
 const classes = computed(() => ({
@@ -21,26 +21,26 @@ const classes = computed(() => ({
 </script>
 
 <template>
-  <div class="center" :class="classes">
+  <div class="hcenter" :class="classes">
     <slot />
   </div>
 </template>
 
 <style scoped>
-.center {
+.hcenter {
   box-sizing: content-box;
-  max-width: v-bind('props.max');
+  max-width: v-bind('props.maxWidth');
   margin-inline: auto;
   padding-inline: v-bind('props.gutters');
   display: flex;
   flex-direction: column;
 }
 
-.center.-and-text {
+.hcenter.-and-text {
   text-align: center;
 }
 
-.center.-intrinsic {
+.hcenter.-intrinsic {
   align-items: center;
 }
 </style>

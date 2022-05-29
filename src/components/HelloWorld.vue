@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Box } from "./layouts/Box/";
-import { Center } from "./layouts/Center/";
+import { HCenter } from "./layouts/Center/";
 import { VStack, HStack } from "./layouts/Stack/";
 import { ref } from 'vue'
 
@@ -11,7 +11,7 @@ const count = ref(0)
 
 <template>
   <VStack space="3rem" :split-after="2">
-    <Center max="640px" gutters="24px" andText intrinsic>
+    <HCenter max-width="640px" gutters="24px" andText intrinsic>
       <h1>{{ msg }}</h1>
       <Box borderWidth="1px" borderRadius="8px">
         <p>
@@ -23,7 +23,7 @@ const count = ref(0)
 
         <p>See <code>README.md</code> for more information.</p>
       </Box>
-      <HStack align="center" justify="center">
+      <HStack align="center">
         <p>
           <a href="https://vitejs.dev/guide/features.html" target="_blank">
             Vite Docs
@@ -37,7 +37,7 @@ const count = ref(0)
         Edit
         <code>components/HelloWorld.vue</code> to test hot module replacement.
       </p>
-    </Center>
+    </HCenter>
   </VStack>
 </template>
 

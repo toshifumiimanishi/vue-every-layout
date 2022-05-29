@@ -1,3 +1,4 @@
-import Center from "./Center.vue";
+import HCenter from "./HCenter.vue";
+import VCenter from "./VCenter.vue";
 
-export { Center };
+export { HCenter, VCenter };
