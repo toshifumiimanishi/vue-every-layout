@@ -19,6 +19,7 @@ const classes = computed(() => ({
 
 onMounted(() => {
   [...rootRef.value.children].map((element, index) => {
+    element.style.setProperty('--stack-space', props.space);
     if (props.splitAfter === index + 1) {
       element.style.setProperty('margin-bottom', 'auto');
     }
@@ -48,10 +49,10 @@ onMounted(() => {
 }
 
 .vstack:not(.-recursive) > :deep(* + *) {
-  margin-top: v-bind('props.space');
+  margin-top: var(--stack-space);
 }
 
 .vstack.-recursive :deep(* + *) {
-  margin-top: v-bind('props.space');
+  margin-top: var(--stack-space);
 }
 </style>
