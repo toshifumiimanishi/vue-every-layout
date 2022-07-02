@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "story:dev": "histoire dev",
+    "story:build": "histoire build",
+    "story:preview": "histoire preview"
   },
   "dependencies": {
     "vue": "^3.2.25"
@@ -16,6 +19,7 @@
     "@vitejs/plugin-vue": "^2.3.3",
     "eslint": "^8.16.0",
     "eslint-plugin-vue": "^9.0.1",
+    "histoire": "^0.7.8",
     "hygen": "^6.2.7",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
